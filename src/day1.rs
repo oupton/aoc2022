@@ -18,7 +18,7 @@ pub fn part2(input: &str) -> isize {
 }
 
 #[cfg(test)]
-mod test {
+mod tests {
     use super::*;
 
     const EXAMPLE: &str = include_str!("../input/day1/example.txt");
