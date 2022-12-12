@@ -31,7 +31,7 @@ fn nr_visited(input: &str, rope_len: usize) -> Option<usize> {
                 "D" => Coord(head.0, head.1 - 1),
                 "L" => Coord(head.0 - 1, head.1),
                 "R" => Coord(head.0 + 1, head.1),
-                _ => panic!("owwie!"),
+                _ => return None,
             };
 
             for i in 1..rope_len {
