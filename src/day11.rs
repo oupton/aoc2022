@@ -175,10 +175,10 @@ fn run_iterations(
     reduce_worry: bool,
 ) -> Option<usize> {
     let mut queues = HashMap::new();
-    let mut common_denominator: isize = monkeys.iter().map(|(_, m)| m.divisor).product();
+    let mut common_multiplier: isize = monkeys.iter().map(|(_, m)| m.divisor).product();
 
     if reduce_worry {
-        common_denominator *= 3;
+        common_multiplier *= 3;
     }
 
     for _ in 0..nr_iterations {
@@ -190,7 +190,7 @@ fn run_iterations(
                 let monkey = monkeys.get_mut(id)?;
 
                 while let Some(mut item) = queue.pop() {
-                    item %= common_denominator;
+                    item %= common_multiplier;
                     monkey.catch(item);
                 }
             }
